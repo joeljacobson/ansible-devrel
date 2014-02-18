@@ -37,6 +37,9 @@
   - name: grab riak 1.4.7
     shell: wget -O /usr/src/riak-1.4.7.tar.gz http://s3.amazonaws.com/downloads.basho.com/riak/1.4/1.4.7/riak-1.4.7.tar.gz
 
+  - name: grab git repo
+    shell: cd /usr/src && git clone https://github.com/joeljacobson/ansible-devrel.git
+
   - name: install boto
     pip: name=boto state=latest
 
