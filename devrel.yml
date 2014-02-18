@@ -24,7 +24,6 @@
     - unixodbc-dev
     - libc6-dev-i386
     - libssl-dev
-    - r-base
 
   - name: grab erlang
     shell: wget http://erlang.org/download/otp_src_R15B01.tar.gz
@@ -32,17 +31,11 @@
   - name: unzip erlang
     shell: tar zxvf otp_src_R15B01.tar.gz
 
-  - name: cd and make erlang
+  - name: make erlang
     shell: cd otp_src_R15B01 && ./configure && make && make install
 
   - name: grab riak 1.4.7
     shell: wget -O /usr/src/riak-1.4.7.tar.gz http://s3.amazonaws.com/downloads.basho.com/riak/1.4/1.4.7/riak-1.4.7.tar.gz
-
-  - name: grab basho_bench
-    shell: git clone git://github.com/basho/basho_bench.git
-
-  - name: make basho_bench
-    shell: cd basho_bench && make
 
   - name: install boto
     pip: name=boto state=latest
