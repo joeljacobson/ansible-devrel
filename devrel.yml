@@ -40,9 +40,6 @@
   - name: install boto
     pip: name=boto state=latest
 
-  - name: install riak client
-    pip: name=riak state=latest
-
   - name: get tornado
     shell: wget https://github.com/downloads/liftoff/GateOne/python-tornado_2.4-1_all.deb
 
